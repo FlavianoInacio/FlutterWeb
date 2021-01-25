@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/util/app_model.dart';
 import 'package:myapp/util/constraints.dart';
 import 'package:myapp/widgets/body.dart';
 import 'package:myapp/widgets/header.dart';
 import 'package:myapp/widgets/menu.dart';
-import 'package:provider/provider.dart';
+import 'package:myapp/widgets/navegacao.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,7 +14,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Size get size => MediaQuery.of(context).size;
   bool get showDrower => size.width >= 600;
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +39,7 @@ class _HomePageState extends State<HomePage> {
             _menu(),
             _direita(),
           ],
-        ):Row(
-          children: [
-            _direita(),
-          ],
-        ),
+        ): _direita(),
       );
   }
 
@@ -71,7 +65,18 @@ class _HomePageState extends State<HomePage> {
   _direita() {
     return Container(
       width: !showDrower? size.width: size.width-menuWidth,
-      child: Body(),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            width: size.width,
+            height: 60,
+            color: Colors.grey[100],
+            child: Navegacao(),
+          ),
+          Expanded(child: Body())
+        ],
+      ),
     );
   }
 }

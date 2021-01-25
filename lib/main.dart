@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/home_page.dart';
+import 'package:myapp/util/app_colors.dart';
 import 'package:myapp/util/app_model.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,13 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
-          primarySwatch: Colors.blue,
+          primaryColor: AppColors.blue,
+          textTheme: TextTheme(
+            bodyText1: TextStyle(
+              color: AppColors.blue,
+              fontSize: 22
+            )
+          )
         ),
         home: HomePage(),
       ),
