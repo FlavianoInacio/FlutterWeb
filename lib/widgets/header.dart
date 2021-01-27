@@ -17,7 +17,11 @@ class _HeaderState extends State<Header> {
       ),
       title: Text(
         "Flutter Werb",
-        style: TextStyle(color: Colors.white, fontSize: 25),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25,
+          fontFamily: Theme.of(context).textTheme.bodyText2.fontFamily,
+        ),
       ),
       trailing: direitaHeader(),
     );
@@ -56,16 +60,13 @@ class _HeaderState extends State<Header> {
   }
 
   void _onclickOptionMenu(BuildContext context, value) {
-    if(value=="meus_dados"){
+    if (value == "meus_dados") {
       alert(context, "Meus Dados");
-    }
-    else if(value=="alterar_senha"){
+    } else if (value == "alterar_senha") {
       alert(context, "Alterar Senha");
+    } else if (value == "logout") {
+      alert(context, "Logout");
     }
-     else if(value=="logout"){
-       alert(context, "Logout");
-    }
-
   }
 
   _getActions() {

@@ -23,9 +23,10 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           primaryColor: AppColors.blue,
           textTheme: TextTheme(
-            bodyText1: TextStyle(
+            bodyText2: TextStyle(
               color: AppColors.blue,
-              fontSize: 22
+              fontSize: 22,
+              fontFamily: "Sofia"
             )
           )
         ),
